@@ -1,0 +1,30 @@
+<script>
+    let fetchBtn = document.getElementById("fetchBtn");
+  
+  
+    fetchBtn.addEventListener("click", buttonclickhandler);
+  
+    function buttonclickhandler() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", 
+"http://www.example.com/api/get/1", true);
+  
+        xhr.onload = function () {
+            if (this.status === 200) {
+ 
+                obj = JSON.parse(this.responseText);
+                let list = document.getElementById("list");
+                str = ""
+                for (key in obj.data) {
+                    str += `<li>${obj.data[key].employee_name}</li>`;
+                }
+                list.innerHTML = str;
+            }
+            else {
+                console.log("File not found");
+            }
+        }
+ 
+        xhr.send();
+    }
+</script>
