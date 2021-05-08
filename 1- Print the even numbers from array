@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript .forEach() Method</title>
+</head>
+<body>
+    <p>
+    	JavaScript forEach() method to get even numbers in an Array.
+    </p>
+</body> 
+<script>
+    function getEvenNumbers(num) {
+        if (num % 2 === 0) {
+            document.writeln(num + "<br />");
+        }
+    }
+
+    var arr = [1, 2, 3, 4, 5, 6];
+    arr.forEach(getEvenNumbers);
+</script>
+</html>
